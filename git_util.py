@@ -1,4 +1,4 @@
-from github import Github, Repository, GithubException
+from github import Github, Repository
 import os
 import datetime
 

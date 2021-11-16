@@ -52,7 +52,7 @@ def format_wiki_df(input_df: pd.DataFrame,
                 # and k is the url
                 for x in input_df[k]:
                     if pd.isna(x):
-                        result_list.append(v)
+                        result_list.append('NA')
                     else:
                         result_list.append('[{}]({})'.format(v, x))
             output_df[k] = result_list

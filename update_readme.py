@@ -28,9 +28,20 @@ def format_readme_df(content_df: pd.DataFrame):
                      'Block Explorer',
                      'Twitter',
                      'Whitepaper',
-                     'Blog',
-                     'Website']
-    result_df = format_wiki_df(content_df, valid_columns, sub_columns=valid_columns)
+                     'Blog']
+    url_columns_dict = {
+        'Github': '*',
+        'Reddit': '*',
+        'Telegram': '*',
+        'Discord': '*',
+        'Medium': '*',
+        'Block Explorer': '*',
+        'Twitter': '*',
+        'Blog': '*',
+        'symbol': 'Website',
+
+    }
+    result_df = format_wiki_df(content_df, valid_columns, sub_columns=valid_columns, url_columns_dict=url_columns_dict)
     return result_df
 
 

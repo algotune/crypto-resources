@@ -60,7 +60,7 @@ def update_readme_section(category_name: str,
     with open(os.path.join(PROJECT_ROOT_DIR, 'README.md'), 'w') as f:
         table_str = content_df.iloc[:n_project_to_include].to_markdown(index=False)
         if include_title:
-            table_str = """#{}
+            table_str = """## {}
             {}""".format(category_name, table_str)
 
         new_str = f"<!-- [PLACEHOLDER_START:{category_name}] --> \n"

@@ -7,7 +7,7 @@ from update_wiki import format_wiki_df
 
 
 def update_base_project():
-    content_df = pd.read_csv('/Users/b3yang/workspace/crypto-resources/raw_data/token_repos.csv')
+    content_df = pd.read_csv(os.path.join(PROJECT_ROOT_DIR, 'raw_data', 'token_repos.csv'))
     format_df = format_readme_df(content_df)
     update_readme_section('Base Projects', format_df)
 
@@ -59,6 +59,10 @@ def update_readme_section(category_name: str,
 
     with open(os.path.join(PROJECT_ROOT_DIR, 'README.md'), 'w') as f:
         table_str = content_df.iloc[:n_project_to_include].to_markdown(index=False)
+        if include_title:
+            table_str = """#{}
+            {}""".format(category_name, table_str)
+
         new_str = f"<!-- [PLACEHOLDER_START:{category_name}] --> \n"
         new_str += table_str
         new_str += f"<!-- [PLACEHOLDER_END:{category_name}] -->"
@@ -67,7 +71,4 @@ def update_readme_section(category_name: str,
         search_end = re.escape('<!-- [PLACEHOLDER_END:{}] -->'.format(category_name))
         pattern_s = re.compile(r'{}.*?{}'.format(search_start, search_end), re.DOTALL)
         write_str = re.sub(pattern_s, new_str, all_read_me)
-        if include_title:
-            write_str = """#{}
-            {}""".format(category_name, write_str)
         f.write(write_str)

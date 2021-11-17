@@ -30,15 +30,15 @@ def format_readme_df(content_df: pd.DataFrame):
                      'Whitepaper',
                      'Blog']
     url_columns_dict = {
-        'Github': 'link',
-        'Reddit': 'link',
-        'Telegram': 'link',
-        'Discord': 'link',
-        'Medium': 'link',
-        'Block Explorer': 'link',
-        'Twitter': 'link',
-        'Blog': 'link',
-        'Whitepaper': 'link',
+        'Github': '**',
+        'Reddit': '**',
+        'Telegram': '**',
+        'Discord': '**',
+        'Medium': '**',
+        'Block Explorer': '**',
+        'Twitter': '**',
+        'Blog': '**',
+        'Whitepaper': '**',
         'symbol': 'Website',
 
     }

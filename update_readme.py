@@ -8,18 +8,19 @@ from update_wiki import format_wiki_df
 
 def update_base_project():
     content_df = pd.read_csv(os.path.join(PROJECT_ROOT_DIR, 'raw_data', 'token_repos.csv'))
-    format_df = format_readme_df(content_df)
+    format_df = format_readme_df_base_projects(content_df)
     update_readme_section('Base Projects', format_df)
 
 
-def format_readme_df(content_df: pd.DataFrame):
+def format_readme_df_base_projects(content_df: pd.DataFrame):
     """
 
     :param content_df:
     usage:
     >>> content_df = pd.read_csv('/Users/b3yang/workspace/crypto-resources/raw_data/token_repos.csv')
     """
-    valid_columns = ['symbol',
+    valid_columns = ['Symbol',
+                     'Name',
                      'Github',
                      'Reddit',
                      'Telegram',
@@ -39,7 +40,7 @@ def format_readme_df(content_df: pd.DataFrame):
         'Twitter': '**',
         'Blog': '**',
         'Whitepaper': '**',
-        'symbol': 'Website',
+        'Symbol': 'Website',
 
     }
     result_df = format_wiki_df(content_df, valid_columns, sub_columns=valid_columns, url_columns_dict=url_columns_dict)

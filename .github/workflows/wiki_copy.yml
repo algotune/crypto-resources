@@ -1,0 +1,30 @@
+name: Wiki-Copy
+
+# generate wiki page on every push
+on: push
+
+jobs:
+  # Set the job key. The key is displayed as the job name
+  update-repo-status:
+    # Name the Job
+    name: Update repo status for all saved repo
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Upload Documentation to Wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
+        with:
+          path: "generated_wiki"
+        env:
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GIT_TOKEN }}

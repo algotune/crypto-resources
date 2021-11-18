@@ -4,6 +4,7 @@ from typing import List, Dict
 import pandas as pd
 import numpy as np
 
+
 def get_wiki_status_color(input_text):
     if input_text is None or input_text == 'inactive':
         result_text = ":heavy_multiplication_x:"

@@ -3,48 +3,6 @@ import re
 import pandas as pd
 
 from conf import PROJECT_ROOT_DIR
-from update_wiki import format_wiki_df
-
-
-def update_base_project():
-    content_df = pd.read_csv(os.path.join(PROJECT_ROOT_DIR, 'raw_data', 'token_repos.csv'))
-    format_df = format_readme_df_base_projects(content_df)
-    update_readme_section('Base Projects', format_df)
-
-
-def format_readme_df_base_projects(content_df: pd.DataFrame):
-    """
-
-    :param content_df:
-    usage:
-    >>> content_df = pd.read_csv('/Users/b3yang/workspace/crypto-resources/raw_data/token_repos.csv')
-    """
-    valid_columns = ['Symbol',
-                     'Name',
-                     'Github',
-                     'Reddit',
-                     'Telegram',
-                     'Discord',
-                     'Medium',
-                     'Block Explorer',
-                     'Twitter',
-                     'Whitepaper',
-                     'Blog']
-    url_columns_dict = {
-        'Github': '**',
-        'Reddit': '**',
-        'Telegram': '**',
-        'Discord': '**',
-        'Medium': '**',
-        'Block Explorer': '**',
-        'Twitter': '**',
-        'Blog': '**',
-        'Whitepaper': '**',
-        'Symbol': 'Website',
-
-    }
-    result_df = format_wiki_df(content_df, valid_columns, sub_columns=valid_columns, url_columns_dict=url_columns_dict)
-    return result_df
 
 
 def update_readme_section(category_name: str,

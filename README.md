@@ -7,6 +7,9 @@ Topics being covered:
 *Base projects for tokens* / *Data* / *Tools/Utilities* / *L2 Scaling solutions* / *Staking/Mining* / *DeFi*
 ___
 
+## Useful crypto resources for reserach
+
+
 <!-- [PLACEHOLDER_START:Base Projects] --> 
 ## Base Projects ([Wiki with full list](https://github.com/algotune/crypto-resources/wiki/base_projects)) 
 | <sub>Symbol</sub>                                  | <sub>Name</sub>            | <sub>Github</sub>                                                                         | <sub>Reddit</sub>                                          | <sub>Telegram</sub>                                | <sub>Discord</sub>                                     | <sub>Medium</sub>                                                                                                     | <sub>Block Explorer</sub>                                                                                                                                                                    | <sub>Twitter</sub>                                                                                 | <sub>Whitepaper</sub>                                                                           | <sub>Blog</sub>                             |
